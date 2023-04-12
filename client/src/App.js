@@ -51,6 +51,7 @@ function App() {
       .then((data) => {
         console.log(data)
         setUserData(data.userData)
+        console.log(data.contributionData)
         setContributionData(
           data.contributionData
             .filter((event) => event.type === 'PushEvent')
@@ -67,8 +68,6 @@ function App() {
   }
 
   // calendar Data
-  let values = []
-  const colorScale = ['#ebedf0', '#9be9a8', '#40c463', '#30a14e', '#216e39']
   // contributionData.forEach((x) => {
   //   if (!values.map((i) => i.date).includes(x)) {
   //     values.push({ date: x, count: 0 })
@@ -104,7 +103,7 @@ function App() {
                 <h5>{`NAME: ${userData.name}`}</h5>
                 <div>
                   <h4>My Commit Calendar</h4>
-                  <CalendarHeatmap values={contributionData} colorScale={colorScale} />
+                  <CalendarHeatmap values={contributionData} showWeekdayLabels={true} showMonthLabels={true} colorScale={['#ebedf0', '#9be9a8', '#40c463', '#30a14e', '#216e39']} />
                 </div>
               </>
             ) : (
