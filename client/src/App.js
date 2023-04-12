@@ -67,16 +67,6 @@ function App() {
       })
   }
 
-  // calendar Data
-  // contributionData.forEach((x) => {
-  //   if (!values.map((i) => i.date).includes(x)) {
-  //     values.push({ date: x, count: 0 })
-  //   } else {
-  //     let found = values.find((i) => i.date === x)
-  //     found.count++
-  //   }
-  // })
-
   function loginWithGithub() {
     window.location.assign('https://github.com/login/oauth/authorize?client_id=' + CLIENT_ID)
   }
